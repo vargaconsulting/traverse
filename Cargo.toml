@@ -1,8 +1,13 @@
 [package]
 name = "traverse"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
 [dependencies]
-bluer = { version = "0.17.3", features = ["bluetoothd"] }
-tokio = { version = "1.45", features = ["full"] }
+bluer = { version = "0.17", features = ["bluetoothd", "full"] }
+tokio       = { version = "1.28", features = ["full"] }
+futures-util = "0.3"               # For `StreamExt`, `pin_mut`, `future::pending()`, etc.
+env_logger  = "0.10"               # For `env_logger::init()` (logging macros)
+log         = "0.4"                # (Optional, if you want to add debug/info logs)
+uuid = "1"
+futures = "0.3"
